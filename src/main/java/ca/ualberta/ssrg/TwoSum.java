@@ -9,8 +9,9 @@ public class TwoSum {
 		Hashtable<Integer, Integer> mem = new Hashtable<Integer, Integer>();
 
 		for (int i = 0; i < nums.length; i++) {
-			mem.put(nums[i], i);
 
+			mem.put(nums[i], i);
+			
 			if (mem.containsKey(target - nums[i])) {
 				int[] result = { mem.get(target - nums[i]), i };
 				return result;
