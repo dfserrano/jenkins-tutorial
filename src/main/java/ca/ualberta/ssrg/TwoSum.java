@@ -10,12 +10,12 @@ public class TwoSum {
 
 		for (int i = 0; i < nums.length; i++) {
 
-			mem.put(nums[i], i);
-			
 			if (mem.containsKey(target - nums[i])) {
 				int[] result = { mem.get(target - nums[i]), i };
 				return result;
 			}
+			
+			mem.put(nums[i], i);
 		}
 
 		return null;
