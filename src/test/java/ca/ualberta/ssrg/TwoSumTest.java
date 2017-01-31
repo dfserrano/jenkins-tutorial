@@ -15,5 +15,16 @@ public class TwoSumTest {
 		assertTrue(positions != null);
 		assertTrue(positions[0] == 0 && positions[1] == 1);
 	}
+	
+	@Test
+	public void testComplexGetPositions() {
+		int[] nums = {2, 7, 11, 15};
+		int target = 22;
+
+		int[] positions = TwoSum.getPositions(nums, target);
+		assertTrue(positions != null);
+		assertTrue(positions[0] == positions[1]);
+		assertTrue(positions[0] == 0 && positions[1] == 1);
+	}
 
 }
