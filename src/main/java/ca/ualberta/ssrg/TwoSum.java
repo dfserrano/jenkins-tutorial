@@ -9,15 +9,13 @@ public class TwoSum {
 		Hashtable<Integer, Integer> mem = new Hashtable<Integer, Integer>();
 
 		for (int i = 0; i < nums.length; i++) {
-
 			
+			mem.put(nums[i], i);
 			
 			if (mem.containsKey(target - nums[i])) {
 				int[] result = { mem.get(target - nums[i]), i };
 				return result;
 			}
-			
-			mem.put(nums[i], i);
 		}
 
 		return null;
@@ -40,7 +38,7 @@ public class TwoSum {
 			if (result != null) {
 				System.out.println("The positions are: " + result[0] + " and " + result[1]);
 			} else {
-				System.out.println("We could not find two numbers in the array");
+				System.out.println("An error has occurred");
 			}
 		} else {
 			System.out.println("Usage: TwoSum <array of comma separated integers> <target>\nExample: TwoSum 1,2,3 5");
