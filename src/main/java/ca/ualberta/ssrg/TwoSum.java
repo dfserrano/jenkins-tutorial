@@ -24,13 +24,7 @@ public class TwoSum {
 	public static void main(String... args) {
 		if (args != null && args.length == 2) {
 
-			String[] pieces = args[0].split(",");
-			int[] nums = new int[pieces.length];
-
-			for (int i = 0; i < pieces.length; i++) {
-				nums[i] = Integer.parseInt(pieces[i]);
-			}
-
+			int[] nums = parseArray(args[0]);
 			int target = Integer.parseInt(args[1]);
 
 			int[] result = getPositions(nums, target);
@@ -45,4 +39,14 @@ public class TwoSum {
 		}
 	}
 
+	private static int[] parseArray(String arr) {
+		String[] pieces = arr.split(",");
+		int[] nums = new int[pieces.length];
+
+		for (int i = 0; i < pieces.length; i++) {
+			nums[i] = Integer.parseInt(pieces[i]);
+		}
+		
+		return nums;
+	}
 }
