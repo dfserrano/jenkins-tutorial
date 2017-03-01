@@ -4,23 +4,6 @@ import java.util.Hashtable;
 
 public class TwoSum {
 
-	public static int[] getPositions(int[] nums, int target) {
-
-		Hashtable<Integer, Integer> mem = new Hashtable<Integer, Integer>();
-
-		for (int i = 0; i < nums.length; i++) {
-			
-			mem.put(nums[i], i);
-			
-			if (mem.containsKey(target - nums[i])) {
-				int[] result = { mem.get(target - nums[i]), i };
-				return result;
-			}
-		}
-
-		return null;
-	}
-
 	public static void main(String... args) {
 		if (args != null && args.length == 2) {
 
@@ -37,6 +20,23 @@ public class TwoSum {
 		} else {
 			System.out.println("Usage: TwoSum <array of comma separated integers> <target>\nExample: TwoSum 1,2,3 5");
 		}
+	}
+	
+	public static int[] getPositions(int[] nums, int target) {
+
+		Hashtable<Integer, Integer> mem = new Hashtable<Integer, Integer>();
+
+		for (int i = 0; i < nums.length; i++) {
+			
+			mem.put(nums[i], i);
+			
+			if (mem.containsKey(target - nums[i])) {
+				int[] result = { mem.get(target - nums[i]), i };
+				return result;
+			}
+		}
+
+		return null;
 	}
 
 	private static int[] parseArray(String arr) {
